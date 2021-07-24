@@ -18,15 +18,19 @@ void main ()
         case 1:
             printf("Nhap ban kinh hinh tron: ");
             scanf("%f", &radius);
-            area = 3.14 * radius * radius;
-            shape = "hinh tron";
-            printf("Dien tich %s la: %.2f", shape, area);
+            if (radius <= 0)
+                printf("Do dai cac canh khong duoc am hoac bang 0");
+            else{
+                area = 3.14 * radius * radius;
+                shape = "hinh tron";
+                printf("Dien tich %s la: %.2f", shape, area);
+            }
             break;
         case 2:
             printf("Nhap chieu dai va chieu cao cua hinh chu nhat: ");
             scanf("%f%f", &length, &width);
-            if (length <= width)
-                printf("Chieu dai khong duoc nho hon chieu rong");
+            if (length <= 0 || width <= 0)
+                printf("Do dai cac canh khong duoc am hoac bang 0");
             else{
                 area = length * width;
                 shape = "hinh chu nhat";
@@ -36,13 +40,14 @@ void main ()
         case 3:
             printf("Nhap chieu dai 3 canh cua tam giac: ");
             scanf("%f%f%f", &a, &b, &c);
-            float p = (a + b + c) / 2;
-            area = sqrt(p*(p-a)*(p-b)*(p-c));
-            shape = "hinh tam giac";
-            printf("Dien tich %s la: %.2f", shape, area);
+            if (length <= 0 || width <= 0)
+                printf("Do dai cac canh khong duoc am hoac bang 0");
+            else{
+                float p = (a + b + c) / 2;
+                area = sqrt(p*(p-a)*(p-b)*(p-c));
+                shape = "hinh tam giac";
+                printf("Dien tich %s la: %.2f", shape, area);
+            }
             break;
     }
 }
-
-
-
