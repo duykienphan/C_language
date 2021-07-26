@@ -48,20 +48,14 @@ int main(){
     
     printf("%s %d", month_char, day);
     
-    switch (day){
-        case 1:
-            printf("st, ");
-            break;
-        case 2:
-            printf("nd, ");
-            break;
-        case 3:
-            printf("rd, ");
-            break;
-        default:
-            printf("th, ");
-            break;
-    }
+    if (day == 1 || day == 21 || day == 31)
+        printf("st, ");
+    else if (day == 2 || day == 22 || day == 32)
+        printf("nd, ");
+    else if (day == 3 || day == 23 || day == 33)
+        printf("rd, ");
+    else
+        printf("th, ");
     
     printf("%d", year);
     return 0;
