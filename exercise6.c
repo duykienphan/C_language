@@ -5,7 +5,6 @@ void main ()
 {
     int choice;
     float area, radius, length, width, a, b, c;
-    char *shape;
     
     printf("Nhap so 1 de tinh dien tich hinh tron\n");
     printf("Nhap so 2 de tinh dien tich hinh chu nhat\n");
@@ -22,8 +21,7 @@ void main ()
                 printf("Do dai cac canh khong duoc am hoac bang 0");
             else{
                 area = 3.14 * radius * radius;
-                shape = "hinh tron";
-                printf("Dien tich %s la: %.2f", shape, area);
+                printf("Dien tich hinh tron la: %.2f", area);
             }
             break;
         case 2:
@@ -33,20 +31,18 @@ void main ()
                 printf("Do dai cac canh khong duoc am hoac bang 0");
             else{
                 area = length * width;
-                shape = "hinh chu nhat";
-                printf("Dien tich %s la: %.2f", shape, area);
+                printf("Dien tich hinh chu nhat la: %.2f", area);
             }
             break;
         case 3:
             printf("Nhap chieu dai 3 canh cua tam giac: ");
             scanf("%f%f%f", &a, &b, &c);
-            if (length <= 0 || width <= 0)
-                printf("Do dai cac canh khong duoc am hoac bang 0");
+            if (a + b <= c || a + c <= b || b + c <= a)
+                printf("Kich thuoc khong phu hop");
             else{
                 float p = (a + b + c) / 2;
                 area = sqrt(p*(p-a)*(p-b)*(p-c));
-                shape = "hinh tam giac";
-                printf("Dien tich %s la: %.2f", shape, area);
+                printf("Dien tich hinh tam giac la: %.2f", area);
             }
             break;
     }
